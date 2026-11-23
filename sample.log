@@ -1,0 +1,12 @@
+# Example sshd_config excerpt for SSH FORTIFY
+# This is synthetic and is not a recommended production configuration.
+PermitRootLogin yes
+PasswordAuthentication yes
+KbdInteractiveAuthentication yes
+X11Forwarding yes
+MaxAuthTries 8
+
+Include /etc/ssh/sshd_config.d/*.conf
+
+Match User backup
+    PasswordAuthentication yes
